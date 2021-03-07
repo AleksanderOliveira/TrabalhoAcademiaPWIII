@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <link rel="stylesheet" href="style.css"/>
+    <meta charset="utf-8"/>
+    <title>Login Academia</title>
+    <script defer>
+    function valida_user(){
+      if(form.user.value==""){
+        alert("Informe o usuario!");
+      }
+    }
+    function valida_psw(){
+      if(form.psw.value==""){
+        alert("Informe a senha!");
+      }
+      function verifica_btn(){
+        if(form.user.value!="" && form.psw.value!=""){
+          form.entrar.value="Entrar";
+          form.entrar.removeAttribute("disabled");
+        }
+      }
+    }
+  </script>
+  </head>
+  <body onload="inicio()">
+    <div id="div_form" name="div_form">
+        <h1 class="login"> Login </h1>
+      <form class="form" action="login.php" method="post" name="form">
+        <div class="campo">
+          <label for="user"> Usuario:</label> <input type="text" name="user" onblur="valida_user()" autofocus/>
+        </div>
+        <div class="campo">
+          <label for="psw"> Senha:</label> <input type="password" name="psw" id="password" onblur="valida_psw()"/>
+        </div>
+        <div class="campo">
+        <input id="botao" type="submit" name="entrar" class="btn btn-primary btn-block -btn-large" value="Entrar" />
+        </div>
+      </form>
+    </div>
+
+  </body>
+</html>
